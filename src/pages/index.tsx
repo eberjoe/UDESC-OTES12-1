@@ -1,16 +1,30 @@
-import { Table } from 'antd';
+import { Form, Input, Button } from 'antd';
+import { UserOutlined, PlusOutlined } from '@ant-design/icons';
+import { WorkAreaContainer } from '../components/WorkAreaContainer';
+
+const { Item } = Form;
 
 export default function Home() {
-  const columns = [{ key: 1, title: 'Nome do tripulante', dataIndex: 'name' }];
-  const content = [
-    { key: 'adao', name: 'Adão' },
-    { key: 'eva', name: 'Eva' },
-    { key: 'caim', name: 'Caim' },
-    { key: 'abel', name: 'Abel' }
-  ];
+  const [form] = Form.useForm();
   return (
-    <div>
-      <Table columns={columns} dataSource={content} />
-    </div>
+    <WorkAreaContainer>
+      <Form layout="vertical" form={form}>
+        <Item name="crew" label="Tripulante">
+          <Input
+            prefix={<UserOutlined />}
+            suffix={
+              <Button style={{ margin: -12 }}>
+                <PlusOutlined />
+              </Button>
+            }
+          />
+        </Item>
+        <Item>
+          <Button type="primary" htmlType="submit">
+            Lançar Foguete
+          </Button>
+        </Item>
+      </Form>
+    </WorkAreaContainer>
   );
 }

@@ -1,6 +1,7 @@
 import './app.css';
 import GlobalStyles from '../style/global';
 import Head from 'next/head';
+import { Header } from '../components/Header';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
         <title>A Queda</title>
       </Head>
       <GlobalStyles />
+      <Header>A QUEDA</Header>
       <Component {...pageProps} />
     </>
   );
