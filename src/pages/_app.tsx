@@ -1,6 +1,8 @@
 import './app.css';
 import GlobalStyles from '../style/global';
 import Head from 'next/head';
+
+import CrewContextProvider from '../providers/crew';
 import { Header } from '../components/Header';
 
 function MyApp({ Component, pageProps }) {
@@ -11,7 +13,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <GlobalStyles />
       <Header>A QUEDA</Header>
-      <Component {...pageProps} />
+      <CrewContextProvider>
+        <Component {...pageProps} />
+      </CrewContextProvider>
     </>
   );
 }
