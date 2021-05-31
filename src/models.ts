@@ -4,7 +4,7 @@ export type CrewMember = {
 };
 
 enum MissionItem {
-  OXYGEN = 1,
+  OXYGEN,
   WATER,
   MAP,
   FOOD,

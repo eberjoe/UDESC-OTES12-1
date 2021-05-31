@@ -8,12 +8,12 @@ export const CrewContext =
     setCrew: Dispatch<SetStateAction<CrewMember[]>>;
   }>(null);
 
-const CrewContextProvider = (props) => {
+const CrewContextProvider = ({ children }) => {
   const [crew, setCrew] = useState<CrewMember[]>([]);
 
   return (
     <CrewContext.Provider value={{ crew: crew, setCrew: setCrew }}>
-      {props.children}
+      {children}
     </CrewContext.Provider>
   );
 };

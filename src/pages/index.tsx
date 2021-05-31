@@ -1,8 +1,14 @@
 import { useContext, useState } from 'react';
-import { Space, Input, Button, message } from 'antd';
-import { UserOutlined, PlusOutlined } from '@ant-design/icons';
-import { WorkAreaContainer } from '../components/WorkAreaContainer';
+import { Space, Input, Button, message, Tag } from 'antd';
+import {
+  UserOutlined,
+  PlusOutlined,
+  RocketFilled,
+  RightOutlined
+} from '@ant-design/icons';
+import Link from 'next/link';
 
+import { WorkAreaContainer } from '../components/WorkAreaContainer';
 import { CrewContext } from '../providers/crew';
 import { CrewMember } from '../models';
 
@@ -11,7 +17,7 @@ export default function Home() {
   const [name, setName] = useState('');
 
   const addCrewMember = () => {
-    if (!crew.filter((member) => member.name === name).length) {
+    if (name && !crew.filter((member) => member.name === name).length) {
       setCrew([...crew, { name }]);
       message.success(`${name} embarcou`);
     } else {
@@ -20,8 +26,13 @@ export default function Home() {
     setName('');
   };
 
+  const unboard = (exitingMember: CrewMember) => {
+    setCrew(crew.filter((member) => member !== exitingMember));
+    message.success(`${exitingMember.name} desembarcou`);
+  };
+
   return (
-    <WorkAreaContainer>
+    <WorkAreaContainer flexDirection="row">
       <Space size="large" direction="vertical">
         <Input
           size="large"
@@ -36,16 +47,28 @@ export default function Home() {
             </Button>
           }
         />
-        <Button size="large" type="primary" htmlType="submit">
-          Iniciar Missão
-        </Button>
+        <Link href="/we-have-a-problem">
+          <Button size="large" type="primary" disabled={!crew.length}>
+            <RocketFilled />
+          </Button>
+        </Link>
       </Space>
       <Space size="small" direction="vertical">
         {crew &&
           crew.map((member: CrewMember) => (
-            <p style={{ marginLeft: 20, fontWeight: 600 }} key={member.name}>
-              {member.name}
-            </p>
+            <Tag
+              color="blue"
+              style={{ marginLeft: 20, fontWeight: 600 }}
+              key={member.name}
+            >
+              <Space>
+                <UserOutlined />
+                {member.name}
+                <Button onClick={() => unboard(member)}>
+                  <RightOutlined />
+                </Button>
+              </Space>
+            </Tag>
           ))}
       </Space>
     </WorkAreaContainer>
