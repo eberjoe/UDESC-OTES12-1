@@ -4,5 +4,5 @@ Projeto em desenvolvimento para a disciplina OTES12 **Tópicos Avançados de Eng
 
 * Linguagem de programação **TypeScript**.
 * Framework **NextJS** sobre a biblioteca **ReactJS** (gestão de rotas, gestão de estado de componentes, *Hot Module Replacement*).
-* Biblioteca **Styled Components** para estilização de componentes.
-* Biblioteca **Ant Design** de componentes de formulário e de apresentação de dados.
+* Biblioteca **Ant Design** para componentes de formulário e de apresentação de dados.
+* Biblioteca **Konva** para componentes gráficos 2D em HTML5.

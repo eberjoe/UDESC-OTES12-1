@@ -3,7 +3,7 @@ export type CrewMember = {
   listOfPriorities?: MissionItem[];
 };
 
-enum MissionItem {
+export enum MissionItem {
   OXYGEN,
   WATER,
   MAP,

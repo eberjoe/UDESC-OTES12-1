@@ -3,12 +3,11 @@ import { Space, Input, Button, message, Tag } from 'antd';
 import {
   UserOutlined,
   PlusOutlined,
-  RocketFilled,
+  RocketOutlined,
   RightOutlined
 } from '@ant-design/icons';
 import Link from 'next/link';
 
-import { WorkAreaContainer } from '../components/WorkAreaContainer';
 import { CrewContext } from '../providers/crew';
 import { CrewMember } from '../models';
 
@@ -32,7 +31,9 @@ export default function Home() {
   };
 
   return (
-    <WorkAreaContainer flexDirection="row">
+    <div
+      style={{ display: 'flex', padding: 100, height: '90vh', width: '100%' }}
+    >
       <Space size="large" direction="vertical">
         <Input
           size="large"
@@ -49,7 +50,7 @@ export default function Home() {
         />
         <Link href="/we-have-a-problem">
           <Button size="large" type="primary" disabled={!crew.length}>
-            <RocketFilled />
+            <RocketOutlined />
           </Button>
         </Link>
       </Space>
@@ -71,6 +72,6 @@ export default function Home() {
             </Tag>
           ))}
       </Space>
-    </WorkAreaContainer>
+    </div>
   );
 }

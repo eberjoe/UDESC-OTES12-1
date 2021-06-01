@@ -1,22 +1,28 @@
 import './app.css';
-import GlobalStyles from '../style/global';
 import Head from 'next/head';
 
 import CrewContextProvider from '../providers/crew';
 import { Header } from '../components/Header';
 
+function SafeHydrate({ children }) {
+  return (
+    <div suppressHydrationWarning>
+      {typeof window === 'undefined' ? null : children}
+    </div>
+  );
+}
+
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <SafeHydrate>
       <Head>
         <title>A Queda</title>
       </Head>
-      <GlobalStyles />
       <Header>A QUEDA</Header>
       <CrewContextProvider>
         <Component {...pageProps} />
       </CrewContextProvider>
-    </>
+    </SafeHydrate>
   );
 }
 
