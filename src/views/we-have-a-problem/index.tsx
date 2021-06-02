@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CrewContext } from '../../providers/crew';
 import { Steps, Button } from 'antd';
 import { UserOutlined, RightOutlined, CheckOutlined } from '@ant-design/icons';
@@ -68,13 +69,15 @@ export const WeHaveAProblem = () => {
             Próximo Tripulante <RightOutlined />
           </Button>
         ) : (
-          <Button
-            disabled={trunk.length < CrashItems.length}
-            onClick={updateCrewDecisions}
-            type="primary"
-          >
-            Finalizar <CheckOutlined />
-          </Button>
+          <Link to="/results">
+            <Button
+              disabled={trunk.length < CrashItems.length}
+              onClick={updateCrewDecisions}
+              type="primary"
+            >
+              Finalizar <CheckOutlined />
+            </Button>
+          </Link>
         )}
       </div>
     </div>

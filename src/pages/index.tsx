@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useHistory } from 'react-router';
 
-import { WeHaveAProblem } from '../views/we-have-a-problem';
 import { Home } from '../views/home';
+import { WeHaveAProblem } from '../views/we-have-a-problem';
+import { Results } from '../views/results';
 
 const Root = () => {
   const history = useHistory();
@@ -19,6 +20,9 @@ const Root = () => {
       </Route>
       <Route path="/we-have-a-problem">
         <WeHaveAProblem />
+      </Route>
+      <Route path="/results">
+        <Results />
       </Route>
     </Switch>
   );
