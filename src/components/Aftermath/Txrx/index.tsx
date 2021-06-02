@@ -1,8 +1,8 @@
 import { Group, Line, Rect, Circle } from 'react-konva';
-import { MissionItem } from '../../models';
+import { SurvivalItem } from '../../../models';
 
 export const Txrx = (props: { x: number; y: number }) => (
-  <Group id={MissionItem.TXRX.toString()} draggable>
+  <Group id={SurvivalItem.TXRX.toString()} draggable>
     <Rect
       x={props.x}
       y={props.y}

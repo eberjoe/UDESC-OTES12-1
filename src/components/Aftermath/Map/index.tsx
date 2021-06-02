@@ -1,8 +1,8 @@
 import { Group, Rect, Star } from 'react-konva';
-import { MissionItem } from '../../models';
+import { SurvivalItem } from '../../../models';
 
 export const Map = (props: { x: number; y: number }) => (
-  <Group id={MissionItem.MAP.toString()} draggable>
+  <Group id={SurvivalItem.MAP.toString()} draggable>
     <Rect
       x={props.x}
       y={props.y}

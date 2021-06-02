@@ -1,8 +1,8 @@
 import { Arc, Group, Rect } from 'react-konva';
-import { MissionItem } from '../../models';
+import { SurvivalItem } from '../../../models';
 
 export const EmergencyKit = (props: { x: number; y: number }) => (
-  <Group id={MissionItem.EMERGENCY_KIT.toString()} draggable>
+  <Group id={SurvivalItem.EMERGENCY_KIT.toString()} draggable>
     <Rect
       x={props.x}
       y={props.y}

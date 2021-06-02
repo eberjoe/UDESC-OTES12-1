@@ -1,10 +1,9 @@
 module.exports = {
-  target: 'serverless',
   async rewrites() {
     return [
-      // Rewrite everything else to `pages/index`
+      // Rewrite everything else to use `pages/index`
       {
-        source: '/:any*',
+        source: '/:path*',
         destination: '/'
       }
     ];

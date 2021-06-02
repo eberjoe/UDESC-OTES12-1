@@ -1,8 +1,8 @@
 import { Group, Line, Ellipse } from 'react-konva';
-import { MissionItem } from '../../models';
+import { SurvivalItem } from '../../../models';
 
 export const Food = (props: { x: number; y: number }) => (
-  <Group id={MissionItem.FOOD.toString()} draggable>
+  <Group id={SurvivalItem.FOOD.toString()} draggable>
     <Line
       x={props.x}
       y={props.y}

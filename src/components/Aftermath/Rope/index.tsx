@@ -1,8 +1,8 @@
 import { Group, Line } from 'react-konva';
-import { MissionItem } from '../../models';
+import { SurvivalItem } from '../../../models';
 
 export const Rope = (props: { x: number; y: number }) => (
-  <Group id={MissionItem.ROPE.toString()} draggable>
+  <Group id={SurvivalItem.ROPE.toString()} draggable>
     <Line
       x={props.x}
       y={props.y}

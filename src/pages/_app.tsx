@@ -1,29 +1,27 @@
 import './app.css';
 import Head from 'next/head';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import CrewContextProvider from '../providers/crew';
 import { Header } from '../components/Header';
 
-function SafeHydrate({ children }) {
+import { AppProps } from 'next/app';
+
+function App({ Component, pageProps }: AppProps) {
   return (
     <div suppressHydrationWarning>
-      {typeof window === 'undefined' ? null : children}
+      {typeof window === 'undefined' ? null : (
+        <CrewContextProvider>
+          <Head>
+            <title>A Queda</title>
+          </Head>
+          <Header>A QUEDA</Header>
+          <Router>
+            <Component {...pageProps} />
+          </Router>
+        </CrewContextProvider>
+      )}
     </div>
   );
 }
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <SafeHydrate>
-      <Head>
-        <title>A Queda</title>
-      </Head>
-      <Header>A QUEDA</Header>
-      <CrewContextProvider>
-        <Component {...pageProps} />
-      </CrewContextProvider>
-    </SafeHydrate>
-  );
-}
-
-export default MyApp;
+export default App;
