@@ -10,6 +10,7 @@ export const Firearm = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
       <Line
         x={x}

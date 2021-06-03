@@ -10,6 +10,7 @@ export const Parachute = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
       <Arc
         x={x}

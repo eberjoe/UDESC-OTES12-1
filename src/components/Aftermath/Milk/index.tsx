@@ -10,8 +10,9 @@ export const Milk = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
-      <Rect x={x} y={y} width={10} height={15} fill="white" />
+      <Rect x={x} y={y} width={10} height={15} stroke="gold" fill="white" />
       <Text
         x={x - 50}
         y={y - 15}

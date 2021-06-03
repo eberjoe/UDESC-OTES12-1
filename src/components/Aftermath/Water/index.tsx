@@ -10,6 +10,7 @@ export const Water = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
       <Rect x={x} y={y} width={14} height={26} cornerRadius={5} fill="blue" />
       <Text

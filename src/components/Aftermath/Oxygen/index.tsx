@@ -10,6 +10,7 @@ export const Oxygen = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
       <Rect x={x} y={y} width={10} height={49} cornerRadius={3} fill="green" />
       <Rect

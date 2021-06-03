@@ -10,6 +10,7 @@ export const Compass = ({ x, y, crashItem }: DrawingProps) => {
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
+      onMouseDown={(e) => e.currentTarget.moveToTop()}
     >
       <Circle x={x} y={y} radius={10} fill="gold" />
       <Star
