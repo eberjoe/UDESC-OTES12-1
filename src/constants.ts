@@ -4,6 +4,12 @@ export type WithChildren<T = Record<string, unknown>> = T & {
   children?: React.ReactNode;
 };
 
+export type DrawingProps = {
+  x: number;
+  y: number;
+  crashItem: { actualImportance: number; description: string };
+};
+
 export type CrewMember = {
   name: string;
   listOfPriorities?: SurvivalItem[];

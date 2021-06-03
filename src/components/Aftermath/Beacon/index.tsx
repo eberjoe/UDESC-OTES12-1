@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Group, Rect, Text } from 'react-konva';
+import { Group, Star, Text } from 'react-konva';
 import { DrawingProps } from '../../../constants';
 
-export const Water = ({ x, y, crashItem }: DrawingProps) => {
+export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
 
   return (
@@ -11,10 +11,20 @@ export const Water = ({ x, y, crashItem }: DrawingProps) => {
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
     >
-      <Rect x={x} y={y} width={14} height={26} cornerRadius={5} fill="blue" />
+      <Star
+        x={x}
+        y={y}
+        numPoints={13}
+        innerRadius={3}
+        outerRadius={10}
+        stroke="yellow"
+        strokeWidth={1}
+        fill="white"
+        rotation={12}
+      />
       <Text
-        x={x - 25}
-        y={y - 15}
+        x={x - 80}
+        y={y - 25}
         text={crashItem.description}
         visible={tootip}
       />

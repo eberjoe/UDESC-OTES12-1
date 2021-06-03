@@ -1,28 +1,43 @@
-import { Arc, Group, Rect } from 'react-konva';
-import { SurvivalItem } from '../../../models';
+import { useState } from 'react';
+import { Arc, Group, Rect, Text } from 'react-konva';
+import { DrawingProps } from '../../../constants';
 
-export const EmergencyKit = (props: { x: number; y: number }) => (
-  <Group id={SurvivalItem.EMERGENCY_KIT.toString()} draggable>
-    <Rect
-      x={props.x}
-      y={props.y}
-      width={30}
-      height={20}
-      stroke="black"
-      strokeWidth={1}
-      fill="white"
-    />
-    <Rect x={props.x + 10} y={props.y + 8} width={10} height={4} fill="red" />
-    <Rect x={props.x + 13} y={props.y + 5} width={4} height={10} fill="red" />
-    <Arc
-      x={props.x + 15}
-      y={props.y}
-      angle={180}
-      innerRadius={5}
-      outerRadius={7}
-      rotation={180}
-      stroke="black"
-      strokeWidth={1}
-    />
-  </Group>
-);
+export const EmergencyKit = ({ x, y, crashItem }: DrawingProps) => {
+  const [tootip, setTooltip] = useState(false);
+
+  return (
+    <Group
+      draggable
+      onMouseOver={() => setTooltip(true)}
+      onMouseLeave={() => setTooltip(false)}
+    >
+      <Rect
+        x={x}
+        y={y}
+        width={30}
+        height={20}
+        stroke="black"
+        strokeWidth={1}
+        fill="white"
+      />
+      <Rect x={x + 10} y={y + 8} width={10} height={4} fill="red" />
+      <Rect x={x + 13} y={y + 5} width={4} height={10} fill="red" />
+      <Arc
+        x={x + 15}
+        y={y}
+        angle={180}
+        innerRadius={5}
+        outerRadius={7}
+        rotation={180}
+        stroke="black"
+        strokeWidth={1}
+      />
+      <Text
+        x={x - 47}
+        y={y - 20}
+        text={crashItem.description}
+        visible={tootip}
+      />
+    </Group>
+  );
+};

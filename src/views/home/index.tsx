@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import Image from 'next/image';
 import { Link } from 'react-router-dom';
 import { Space, Input, Button, message, Tag } from 'antd';
 import {
@@ -9,7 +10,7 @@ import {
 } from '@ant-design/icons';
 
 import { CrewContext } from '../../providers/crew';
-import { CrewMember } from '../../models';
+import { CrewMember } from '../../constants';
 
 export function Home() {
   const { crew, setCrew } = useContext(CrewContext);
@@ -32,9 +33,15 @@ export function Home() {
 
   return (
     <div
-      style={{ display: 'flex', padding: 100, height: '90vh', width: '100%' }}
+      style={{
+        display: 'flex',
+        padding: 50,
+        height: '90vh',
+        width: '100%'
+      }}
     >
       <Space size="large" direction="vertical">
+        <Image src="/sn8_sunrise.jpg" width={800} height={400} />
         <Input
           size="large"
           placeholder="Nome do tripulante"

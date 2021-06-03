@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Group, Rect, Text } from 'react-konva';
 import { DrawingProps } from '../../../constants';
 
-export const Water = ({ x, y, crashItem }: DrawingProps) => {
+export const Lifeboat = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
 
   return (
@@ -11,9 +11,19 @@ export const Water = ({ x, y, crashItem }: DrawingProps) => {
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
     >
-      <Rect x={x} y={y} width={14} height={26} cornerRadius={5} fill="blue" />
+      <Rect
+        x={x}
+        y={y}
+        width={45}
+        height={25}
+        cornerRadius={[15, 7, 7, 15]}
+        stroke="red"
+        strokeWidth={7}
+        fill="yellow"
+        rotation={12}
+      />
       <Text
-        x={x - 25}
+        x={x - 20}
         y={y - 15}
         text={crashItem.description}
         visible={tootip}

@@ -1,16 +1,31 @@
-import { Group, Ellipse } from 'react-konva';
-import { SurvivalItem } from '../../../models';
+import { useState } from 'react';
+import { Group, Rect, Text } from 'react-konva';
+import { DrawingProps } from '../../../constants';
 
-export const Oxygen = (props: { x: number; y: number }) => (
-  <Group id={SurvivalItem.OXYGEN.toString()} draggable>
-    <Ellipse x={props.x} y={props.y} radiusX={5} radiusY={30} fill="green" />
-    <Ellipse
-      id={SurvivalItem.OXYGEN.toString()}
-      x={props.x + 12}
-      y={props.y}
-      radiusX={5}
-      radiusY={30}
-      fill="green"
-    />
-  </Group>
-);
+export const Oxygen = ({ x, y, crashItem }: DrawingProps) => {
+  const [tootip, setTooltip] = useState(false);
+
+  return (
+    <Group
+      draggable
+      onMouseOver={() => setTooltip(true)}
+      onMouseLeave={() => setTooltip(false)}
+    >
+      <Rect x={x} y={y} width={10} height={49} cornerRadius={3} fill="green" />
+      <Rect
+        x={x + 12}
+        y={y}
+        width={10}
+        height={49}
+        cornerRadius={3}
+        fill="green"
+      />
+      <Text
+        x={x - 68}
+        y={y - 15}
+        text={crashItem.description}
+        visible={tootip}
+      />
+    </Group>
+  );
+};

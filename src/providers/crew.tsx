@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
 
-import { CrewMember } from '../models';
+import { CrewMember } from '../constants';
 
 export const CrewContext =
   createContext<{

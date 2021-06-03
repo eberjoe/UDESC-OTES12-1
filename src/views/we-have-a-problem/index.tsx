@@ -5,7 +5,7 @@ import { Steps, Button } from 'antd';
 import { UserOutlined, RightOutlined, CheckOutlined } from '@ant-design/icons';
 
 import { Aftermath } from '../../components/Aftermath';
-import { CrashItems, SurvivalItem } from '../../models';
+import { CrashItems, SurvivalItem } from '../../constants';
 
 const { Step } = Steps;
 
