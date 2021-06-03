@@ -23,6 +23,15 @@ export const Parachute = ({ x, y, crashItem }: DrawingProps) => {
         strokeWidth={1}
         fill="white"
       />
+      <Arc
+        x={x}
+        y={y - 30}
+        angle={150}
+        innerRadius={3}
+        outerRadius={10}
+        rotation={15}
+        fill="red"
+      />
       <Line
         x={x}
         y={y}
