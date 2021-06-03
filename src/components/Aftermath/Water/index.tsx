@@ -5,7 +5,6 @@ import { DrawingProps } from '../../../types';
 export const Water = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
   const [pos, setPos] = useState({ x, y });
-  console.log(pos, x, y);
 
   return (
     <Group
