@@ -78,3 +78,5 @@ export const SurvivalItems = [
     description: 'Caixa de fósforos'
   }
 ];
+
+export const stageLimits = { x: 800, y: 300 };

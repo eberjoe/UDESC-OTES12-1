@@ -19,8 +19,6 @@ export const WeHaveAProblem = () => {
     setStep(step + 1);
   };
 
-  const stageLimits = { x: 800, y: 300 };
-
   const updateCrewDecisions = () => {
     const crewCopy = crew;
     crewCopy[step].listOfPriorities = trunk;
@@ -61,7 +59,7 @@ export const WeHaveAProblem = () => {
             ></Step>
           ))}
         </Steps>
-        <Aftermath stageLimits={stageLimits} />
+        <Aftermath />
         <div
           style={{
             display: 'flex',

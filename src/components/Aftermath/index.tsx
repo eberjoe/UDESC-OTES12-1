@@ -1,6 +1,6 @@
 import { Stage, Layer, Rect } from 'react-konva';
 
-import { SurvivalItems, SurvivalItemIndex } from '../../constants';
+import { SurvivalItems, SurvivalItemIndex, stageLimits } from '../../constants';
 
 import { Oxygen } from './Oxygen';
 import { Water } from './Water';
@@ -18,11 +18,7 @@ import { Heater } from './Heater';
 import { Compass } from './Compass';
 import { Matches } from './Matches';
 
-type AfterMathProps = {
-  stageLimits: { x: number; y: number };
-};
-
-export const Aftermath = ({ stageLimits }: AfterMathProps) => {
+export const Aftermath = () => {
   return (
     <Stage
       width={stageLimits.x}
