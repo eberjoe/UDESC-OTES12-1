@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
 
-import { CrewMember } from '../constants';
+import { CrewMember } from '../types';
 
 export const CrewContext =
   createContext<{
@@ -12,7 +12,7 @@ const CrewContextProvider = ({ children }) => {
   const [crew, setCrew] = useState<CrewMember[]>([]);
 
   return (
-    <CrewContext.Provider value={{ crew: crew, setCrew: setCrew }}>
+    <CrewContext.Provider value={{ crew, setCrew }}>
       {children}
     </CrewContext.Provider>
   );

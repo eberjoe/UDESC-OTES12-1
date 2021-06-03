@@ -1,6 +1,5 @@
-import { Stage, Layer } from 'react-konva';
+import { Stage, Layer, Rect } from 'react-konva';
 
-import { SurvivalItem } from '../../types';
 import { SurvivalItems, SurvivalItemIndex } from '../../constants';
 
 import { Oxygen } from './Oxygen';
@@ -21,10 +20,9 @@ import { Matches } from './Matches';
 
 type AfterMathProps = {
   stageLimits: { x: number; y: number };
-  setTrunk: (items: SurvivalItem[]) => void;
 };
 
-export const Aftermath = ({ stageLimits, setTrunk }: AfterMathProps) => {
+export const Aftermath = ({ stageLimits }: AfterMathProps) => {
   return (
     <Stage
       width={stageLimits.x}
@@ -32,6 +30,16 @@ export const Aftermath = ({ stageLimits, setTrunk }: AfterMathProps) => {
       style={{ background: '#bbb', border: '1px solid black' }}
     >
       <Layer>
+        <Rect
+          x={stageLimits.x - 200}
+          y={stageLimits.y - 150}
+          width={170}
+          height={120}
+          stroke="brown"
+          strokeWidth={2}
+          dash={[10, 5]}
+        />
+
         <Oxygen
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}

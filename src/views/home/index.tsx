@@ -9,7 +9,7 @@ import {
   RightOutlined
 } from '@ant-design/icons';
 
-import { CrewContext } from '../../providers/crew';
+import { CrewContext } from '../../providers/crew-context';
 import { CrewMember } from '../../types';
 
 export function Home() {
