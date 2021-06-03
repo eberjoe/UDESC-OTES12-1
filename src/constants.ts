@@ -1,21 +1,4 @@
-import React from 'react';
-
-export type WithChildren<T = Record<string, unknown>> = T & {
-  children?: React.ReactNode;
-};
-
-export type DrawingProps = {
-  x: number;
-  y: number;
-  crashItem: { actualImportance: number; description: string };
-};
-
-export type CrewMember = {
-  name: string;
-  listOfPriorities?: SurvivalItem[];
-};
-
-export enum SurvivalItem {
+export enum SurvivalItemIndex {
   OXYGEN,
   WATER,
   MAP,
@@ -33,7 +16,7 @@ export enum SurvivalItem {
   MATCHES
 }
 
-export const CrashItems = [
+export const SurvivalItems = [
   {
     actualImportance: 1,
     description: '2 tanques de 50kg de oxigênio'

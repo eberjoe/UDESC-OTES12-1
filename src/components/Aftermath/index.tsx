@@ -1,6 +1,7 @@
 import { Stage, Layer } from 'react-konva';
 
-import { CrashItems, SurvivalItem } from '../../constants';
+import { SurvivalItem } from '../../types';
+import { SurvivalItems, SurvivalItemIndex } from '../../constants';
 
 import { Oxygen } from './Oxygen';
 import { Water } from './Water';
@@ -34,77 +35,77 @@ export const Aftermath = ({ stageLimits, setTrunk }: AfterMathProps) => {
         <Oxygen
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.OXYGEN]}
+          crashItem={SurvivalItems[SurvivalItemIndex.OXYGEN]}
         />
         <Water
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.WATER]}
+          crashItem={SurvivalItems[SurvivalItemIndex.WATER]}
         />
         <Map
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.MAP]}
+          crashItem={SurvivalItems[SurvivalItemIndex.MAP]}
         />
         <Food
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.FOOD]}
+          crashItem={SurvivalItems[SurvivalItemIndex.FOOD]}
         />
         <Txrx
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.TXRX]}
+          crashItem={SurvivalItems[SurvivalItemIndex.TXRX]}
         />
         <Rope
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.ROPE]}
+          crashItem={SurvivalItems[SurvivalItemIndex.ROPE]}
         />
         <EmergencyKit
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.EMERGENCY_KIT]}
+          crashItem={SurvivalItems[SurvivalItemIndex.EMERGENCY_KIT]}
         />
         <Parachute
           x={Math.random() * (stageLimits.x - 150) + 55}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.PARACHUTE]}
+          crashItem={SurvivalItems[SurvivalItemIndex.PARACHUTE]}
         />
         <Lifeboat
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.LIFEBOAT]}
+          crashItem={SurvivalItems[SurvivalItemIndex.LIFEBOAT]}
         />
         <Beacon
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.BEACON]}
+          crashItem={SurvivalItems[SurvivalItemIndex.BEACON]}
         />
         <Firearm
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.FIREARM]}
+          crashItem={SurvivalItems[SurvivalItemIndex.FIREARM]}
         />
         <Milk
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.MILK]}
+          crashItem={SurvivalItems[SurvivalItemIndex.MILK]}
         />
         <Heater
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.HEATER]}
+          crashItem={SurvivalItems[SurvivalItemIndex.HEATER]}
         />
         <Compass
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.COMPASS]}
+          crashItem={SurvivalItems[SurvivalItemIndex.COMPASS]}
         />
         <Matches
           x={Math.random() * (stageLimits.x - 150) + 25}
           y={Math.random() * (stageLimits.y - 100) + 10}
-          crashItem={CrashItems[SurvivalItem.MATCHES]}
+          crashItem={SurvivalItems[SurvivalItemIndex.MATCHES]}
         />
       </Layer>
     </Stage>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Arc, Group, Line, Text } from 'react-konva';
-import { DrawingProps } from '../../../constants';
+import { DrawingProps } from '../../../types';
 
 export const Parachute = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);

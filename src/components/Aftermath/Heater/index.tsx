@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Group, Line, Rect, Text } from 'react-konva';
-import { DrawingProps } from '../../../constants';
+import { DrawingProps } from '../../../types';
 
 export const Heater = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);

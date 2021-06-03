@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Group, Star, Text } from 'react-konva';
-import { DrawingProps } from '../../../constants';
+import { DrawingProps } from '../../../types';
 
 export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);

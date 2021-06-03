@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Group, Line, Rect, Circle, Text } from 'react-konva';
-import { DrawingProps } from '../../../constants';
+import { DrawingProps } from '../../../types';
 
 export const Txrx = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
