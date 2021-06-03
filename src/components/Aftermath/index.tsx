@@ -41,78 +41,78 @@ export const Aftermath = ({ stageLimits }: AfterMathProps) => {
         />
 
         <Oxygen
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.OXYGEN]}
         />
         <Water
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.WATER]}
         />
         <Map
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.MAP]}
         />
         <Food
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.FOOD]}
         />
         <Txrx
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.TXRX]}
         />
         <Rope
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.ROPE]}
         />
         <EmergencyKit
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.EMERGENCY_KIT]}
         />
         <Parachute
-          x={Math.random() * (stageLimits.x - 150) + 55}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 55)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.PARACHUTE]}
         />
         <Lifeboat
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.LIFEBOAT]}
         />
         <Beacon
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.BEACON]}
         />
         <Firearm
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.FIREARM]}
         />
         <Milk
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.MILK]}
         />
         <Heater
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.HEATER]}
         />
         <Compass
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.COMPASS]}
         />
         <Matches
-          x={Math.random() * (stageLimits.x - 150) + 25}
-          y={Math.random() * (stageLimits.y - 100) + 10}
+          x={Math.ceil(Math.random() * (stageLimits.x - 150) + 25)}
+          y={Math.ceil(Math.random() * (stageLimits.y - 100) + 10)}
           crashItem={SurvivalItems[SurvivalItemIndex.MATCHES]}
         />
       </Layer>

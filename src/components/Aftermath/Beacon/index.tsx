@@ -4,13 +4,19 @@ import { DrawingProps } from '../../../types';
 
 export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
-
+  const [pos, setPos] = useState({ x, y });
   return (
     <Group
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
       onMouseDown={(e) => e.currentTarget.moveToTop()}
+      onDragMove={(e) =>
+        setPos({
+          x: x + e.currentTarget.getPosition().x,
+          y: y + e.currentTarget.getPosition().y
+        })
+      }
     >
       <Star
         x={x}
@@ -27,6 +33,12 @@ export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
         x={x - 80}
         y={y - 25}
         text={crashItem.description}
+        visible={false}
+      />
+      <Text
+        x={x - 80}
+        y={y - 25}
+        text={`${pos.x}, ${pos.y}`}
         visible={tootip}
       />
     </Group>

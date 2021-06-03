@@ -4,13 +4,19 @@ import { DrawingProps } from '../../../types';
 
 export const Food = ({ x, y, crashItem }: DrawingProps) => {
   const [tootip, setTooltip] = useState(false);
-
+  const [pos, setPos] = useState({ x, y });
   return (
     <Group
       draggable
       onMouseOver={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
       onMouseDown={(e) => e.currentTarget.moveToTop()}
+      onDragMove={(e) =>
+        setPos({
+          x: x + e.currentTarget.getPosition().x,
+          y: y + e.currentTarget.getPosition().y
+        })
+      }
     >
       <Line
         x={x}
@@ -40,6 +46,12 @@ export const Food = ({ x, y, crashItem }: DrawingProps) => {
         x={x - 47}
         y={y - 25}
         text={crashItem.description}
+        visible={false}
+      />
+      <Text
+        x={x - 47}
+        y={y - 25}
+        text={`${pos.x}, ${pos.y}`}
         visible={tootip}
       />
     </Group>
