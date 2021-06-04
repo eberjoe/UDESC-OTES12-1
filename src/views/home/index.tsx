@@ -20,16 +20,31 @@ export function Home() {
   const addCrewMember = () => {
     if (name && !crew.filter((member) => member.name === name).length) {
       setCrew([...crew, { name }]);
-      message.success(`${name} embarcou`);
+      message.success({
+        content: `${name} embarcou`,
+        style: {
+          marginRight: '100vh'
+        }
+      });
     } else {
-      message.error(`${name} já está a bordo`);
+      message.error({
+        content: `${name} já está a bordo`,
+        style: {
+          marginRight: '100vh'
+        }
+      });
     }
     setName('');
   };
 
   const unboard = (exitingMember: CrewMember) => {
     setCrew(crew.filter((member) => member !== exitingMember));
-    message.success(`${exitingMember.name} desembarcou`);
+    message.warn({
+      content: `${exitingMember.name} desembarcou`,
+      style: {
+        marginRight: '100vh'
+      }
+    });
   };
 
   return (
@@ -52,7 +67,7 @@ export function Home() {
         }}
       >
         <Space size="large" direction="vertical">
-          <Image src="/sn8_sunrise.jpg" width={800} height={400} />
+          <Image src="/sn8_sunrise.jpg" width={700} height={350} />
           <Input
             size="large"
             placeholder="Nome do tripulante"

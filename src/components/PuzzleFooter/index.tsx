@@ -59,7 +59,7 @@ export const PuzzleFooter = ({
       <h2>{`${memberName} recuperou ${trunk.length} dos ${SurvivalItems.length} itens`}</h2>
       {step < crewCount - 1 ? (
         <Button
-          //disabled={trunk.length < SurvivalItems.length}
+          disabled={trunk.length < SurvivalItems.length}
           onClick={() => {
             next();
             updateCrew();
@@ -71,7 +71,7 @@ export const PuzzleFooter = ({
       ) : (
         <Link to="/results">
           <Button
-            //disabled={trunk.length < SurvivalItems.length}
+            disabled={trunk.length < SurvivalItems.length}
             onClick={updateCrew}
             type="primary"
           >

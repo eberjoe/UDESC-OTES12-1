@@ -2,14 +2,14 @@ export const Header = ({ children }) => (
   <div
     style={{
       display: 'flex',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
       paddingLeft: 20,
       alignItems: 'center',
-      background: '#1946',
       height: 50,
       width: '100%',
       fontWeight: 900,
-      fontSize: 'larger'
+      fontSize: 'larger',
+      backgroundImage: 'radial-gradient(#fff 5.66%, #1946 94.35%)'
     }}
   >
     {children}

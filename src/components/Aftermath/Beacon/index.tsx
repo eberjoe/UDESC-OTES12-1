@@ -2,9 +2,15 @@ import { useState } from 'react';
 import { Group, Star, Text } from 'react-konva';
 import { MessageService } from '../../../providers/message-service';
 import { DrawingProps } from '../../../types';
-import { stageLimits } from '../../../constants';
+import { stageLimits, SurvivalItemIndex } from '../../../constants';
 
-export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
+export const Beacon = ({
+  x,
+  y,
+  crashItem,
+  setDragOffset,
+  dragOffset
+}: DrawingProps) => {
   const [tooltip, setTooltip] = useState(false);
   const [pos, setPos] = useState({ x, y });
 
@@ -16,10 +22,10 @@ export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
       onMouseDown={(e) => e.currentTarget.moveToTop()}
       onDragMove={(e) => {
         if (
-          x + e.currentTarget.getPosition().x > stageLimits.x - 5 ||
-          y + e.currentTarget.getPosition().y > stageLimits.y - 5 ||
-          x + e.currentTarget.getPosition().x < 0 ||
-          y + e.currentTarget.getPosition().y < 0
+          x + e.target.x() > stageLimits.x - 5 ||
+          y + e.target.y() > stageLimits.y - 5 ||
+          x + e.target.x() < 0 ||
+          y + e.target.y() < 0
         ) {
           e.currentTarget.setPosition({
             x: pos.x - x,
@@ -27,16 +33,21 @@ export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
           });
         }
         setPos({
-          x: x + e.currentTarget.getPosition().x,
-          y: y + e.currentTarget.getPosition().y
+          x: x + e.target.x(),
+          y: y + e.target.y()
         });
       }}
-      onDragEnd={() => {
+      onDragEnd={(e) => {
         if (pos.x > 613 && pos.x < 758 && pos.y > 163 && pos.y < 258) {
           MessageService.sendMessage({ item: crashItem, push: true });
         } else {
           MessageService.sendMessage({ item: crashItem, push: false });
         }
+        dragOffset[SurvivalItemIndex.BEACON] = {
+          x: e.target.x(),
+          y: e.target.y()
+        };
+        setDragOffset(dragOffset);
       }}
     >
       <Star

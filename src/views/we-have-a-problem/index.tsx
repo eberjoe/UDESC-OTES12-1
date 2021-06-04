@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CrewContext } from '../../providers/crew-context';
 import { Steps } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
@@ -17,6 +17,10 @@ export const WeHaveAProblem = () => {
     setStep(step + 1);
   };
 
+  useEffect(() => {
+    console.log(crew);
+  }, [crew, step]);
+
   return (
     <div
       style={{
@@ -25,11 +29,12 @@ export const WeHaveAProblem = () => {
         alignItems: 'center',
         padding: 50,
         height: '90vh',
-        width: '100%'
+        width: '100%',
+        justifyContent: 'space-between'
       }}
     >
       <h1>
-        {`${crew[step].name}, arraste os itens por ordem de prioridade para a área de sobrevivência`}
+        {`${crew[step].name}, arraste os itens para a área de sobrevivência`}
       </h1>
       <div
         style={{

@@ -13,6 +13,8 @@ export type DrawingProps = {
   x: number;
   y: number;
   crashItem: SurvivalItem;
+  setDragOffset: (positions: { x: number; y: number }[]) => void;
+  dragOffset: { x: number; y: number }[];
 };
 
 export type CrewMember = {
