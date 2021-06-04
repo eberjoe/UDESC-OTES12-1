@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Group, Star, Text } from 'react-konva';
+import { MessageService } from '../../../providers/message-service';
 import { DrawingProps } from '../../../types';
 import { stageLimits } from '../../../constants';
 
 export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
-  const [tootip, setTooltip] = useState(false);
+  const [tooltip, setTooltip] = useState(false);
   const [pos, setPos] = useState({ x, y });
+
   return (
     <Group
       draggable
@@ -29,6 +31,13 @@ export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
           y: y + e.currentTarget.getPosition().y
         });
       }}
+      onDragEnd={() => {
+        if (pos.x > 613 && pos.x < 758 && pos.y > 163 && pos.y < 258) {
+          MessageService.sendMessage({ item: crashItem, push: true });
+        } else {
+          MessageService.sendMessage({ item: crashItem, push: false });
+        }
+      }}
     >
       <Star
         x={x}
@@ -45,13 +54,7 @@ export const Beacon = ({ x, y, crashItem }: DrawingProps) => {
         x={x - 80}
         y={y - 25}
         text={crashItem.description}
-        visible={false}
-      />
-      <Text
-        x={x - 80}
-        y={y - 25}
-        text={`${pos.x}, ${pos.y}`}
-        visible={tootip}
+        visible={tooltip}
       />
     </Group>
   );

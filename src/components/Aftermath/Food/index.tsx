@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Group, Line, Ellipse, Text } from 'react-konva';
+import { MessageService } from '../../../providers/message-service';
 import { DrawingProps } from '../../../types';
 import { stageLimits } from '../../../constants';
 
 export const Food = ({ x, y, crashItem }: DrawingProps) => {
-  const [tootip, setTooltip] = useState(false);
+  const [tooltip, setTooltip] = useState(false);
   const [pos, setPos] = useState({ x, y });
+
   return (
     <Group
       draggable
@@ -28,6 +30,13 @@ export const Food = ({ x, y, crashItem }: DrawingProps) => {
           x: x + e.currentTarget.getPosition().x,
           y: y + e.currentTarget.getPosition().y
         });
+      }}
+      onDragEnd={() => {
+        if (pos.x > 600 && pos.x < 748 && pos.y > 161 && pos.y < 255) {
+          MessageService.sendMessage({ item: crashItem, push: true });
+        } else {
+          MessageService.sendMessage({ item: crashItem, push: false });
+        }
       }}
     >
       <Line
@@ -58,13 +67,7 @@ export const Food = ({ x, y, crashItem }: DrawingProps) => {
         x={x - 47}
         y={y - 25}
         text={crashItem.description}
-        visible={false}
-      />
-      <Text
-        x={x - 47}
-        y={y - 25}
-        text={`${pos.x}, ${pos.y}`}
-        visible={tootip}
+        visible={tooltip}
       />
     </Group>
   );

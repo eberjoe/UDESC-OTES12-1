@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Group, Line, Rect, Circle, Text } from 'react-konva';
+import { MessageService } from '../../../providers/message-service';
 import { DrawingProps } from '../../../types';
 import { stageLimits } from '../../../constants';
 
 export const Txrx = ({ x, y, crashItem }: DrawingProps) => {
-  const [tootip, setTooltip] = useState(false);
+  const [tooltip, setTooltip] = useState(false);
   const [pos, setPos] = useState({ x, y });
+
   return (
     <Group
       draggable
@@ -28,6 +30,13 @@ export const Txrx = ({ x, y, crashItem }: DrawingProps) => {
           x: x + e.currentTarget.getPosition().x,
           y: y + e.currentTarget.getPosition().y
         });
+      }}
+      onDragEnd={() => {
+        if (pos.x > 600 && pos.x < 733 && pos.y > 167 && pos.y < 248) {
+          MessageService.sendMessage({ item: crashItem, push: true });
+        } else {
+          MessageService.sendMessage({ item: crashItem, push: false });
+        }
       }}
     >
       <Rect
@@ -55,13 +64,7 @@ export const Txrx = ({ x, y, crashItem }: DrawingProps) => {
         x={x - 67}
         y={y - 27}
         text={crashItem.description}
-        visible={false}
-      />
-      <Text
-        x={x - 67}
-        y={y - 27}
-        text={`${pos.x}, ${pos.y}`}
-        visible={tootip}
+        visible={tooltip}
       />
     </Group>
   );

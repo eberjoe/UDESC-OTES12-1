@@ -14,6 +14,7 @@ import { CrewMember } from '../../types';
 
 export function Home() {
   const { crew, setCrew } = useContext(CrewContext);
+
   const [name, setName] = useState('');
 
   const addCrewMember = () => {
