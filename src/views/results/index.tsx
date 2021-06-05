@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { CrewContext } from '../../providers/crew-context';
 import { Button, Table } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
@@ -7,6 +8,7 @@ import { SurvivalItems } from '../../constants';
 export const Results = () => {
   const { crew } = useContext(CrewContext);
 
+  const history = useHistory();
   const results = SurvivalItems.map((item, i) => ({
     crewRegard: crew
       .map((member) => member.listOfPriorities[i].actualImportance)
@@ -109,7 +111,13 @@ export const Results = () => {
           width: '100%'
         }}
       >
-        <Button type="primary" onClick={() => location.reload()}>
+        <Button
+          type="primary"
+          onClick={() => {
+            history.push('/home');
+            location.reload();
+          }}
+        >
           {<LeftOutlined />} Nova Missão
         </Button>
       </div>
