@@ -12,7 +12,7 @@ import {
 import { CrewContext } from '../../providers/crew-context';
 import { CrewMember } from '../../types';
 
-export function Home() {
+export const Home = () => {
   const { crew, setCrew } = useContext(CrewContext);
 
   const [name, setName] = useState('');
@@ -83,7 +83,7 @@ export function Home() {
           />
           <Link to="/we-have-a-problem">
             <Button size="large" type="primary" disabled={!crew.length}>
-              <RocketOutlined />
+              <RocketOutlined /> Iniciar Missão
             </Button>
           </Link>
         </Space>
@@ -108,4 +108,4 @@ export function Home() {
       </div>
     </div>
   );
-}
+};

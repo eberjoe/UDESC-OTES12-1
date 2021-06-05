@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { CrewContext } from '../../providers/crew-context';
 import { Steps } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
@@ -10,16 +10,13 @@ const { Step } = Steps;
 
 export const WeHaveAProblem = () => {
   const { crew } = useContext(CrewContext);
+
   const [step, setStep] = useState(0);
   global['trunk'] = [];
 
   const next = () => {
     setStep(step + 1);
   };
-
-  useEffect(() => {
-    console.log(crew);
-  }, [crew, step]);
 
   return (
     <div
@@ -33,9 +30,7 @@ export const WeHaveAProblem = () => {
         justifyContent: 'space-between'
       }}
     >
-      <h1>
-        {`${crew[step].name}, arraste os itens para a área de sobrevivência`}
-      </h1>
+      <h1>{'Arraste os itens para a área de sobrevivência'}</h1>
       <div
         style={{
           display: 'flex',

@@ -9,7 +9,7 @@ export const Header = ({ children }) => (
       width: '100%',
       fontWeight: 900,
       fontSize: 'larger',
-      backgroundImage: 'radial-gradient(#fff 5.66%, #1946 94.35%)'
+      backgroundImage: 'radial-gradient(#fff 5.66%, grey 94.35%)'
     }}
   >
     {children}

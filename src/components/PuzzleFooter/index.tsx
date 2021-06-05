@@ -22,6 +22,7 @@ export const PuzzleFooter = ({
   crewCount
 }: PuzzleFooterProps) => {
   const { crew, setCrew } = useContext(CrewContext);
+
   const [trunk, setTrunk] = useState<SurvivalItem[]>([]);
 
   useEffect(() => {
